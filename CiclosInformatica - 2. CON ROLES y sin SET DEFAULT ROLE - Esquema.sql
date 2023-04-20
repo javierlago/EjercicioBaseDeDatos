@@ -1,9 +1,9 @@
 #*******************************************************************************************
 #	CREACIÓN Y USO DE LA BASE DE DATOS 'CInformatica e comunicaciónslosInformatInformatica e comunicaciónsa'
 #*******************************************************************************************
-drop database if exists CiclosdeInformatica;
-create database CiclosdeInformatica;
-use CiclosdeInformatica;
+drop database if exists 	CiclosdeInformatica;
+create database 			CiclosdeInformatica;
+use							CiclosdeInformatica;
 
 #*******************************************************************************************
 #	CREACIÓN DE LAS TABLAS DE LA BASE DE DATOS
@@ -69,8 +69,62 @@ insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3012',
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3032',	'Formación en centros de traballo',								320,	2,	'Informatica de oficina');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3016',	'Instalación e mantemento de redes para transmisión de datos',	206,	2,	'Informatica de oficina');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3030',	'Operacións auxiliares para a configuración e a explotación',	205,	2,	'Informatica de oficina');
-
-
+####################################################################################################################################################################################
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0223',	'Aplicacións ofimáticas',										240,	1,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0229',	'Formación e orientación laboral',								107,	1,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0221',	'Montaxe e mantemento de equipamentos',							240,	1,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0225',	'Redes locais',													213,	1,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0222',	'Sistemas operativos monoposto',								216,	1,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0228',	'Aplicacións web',												123,	2,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0230',	'Empresa e iniciativa emprendedora',							53,		2,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0231',	'Formación en centros de traballo',								410,	2,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0226',	'Seguridade informática',										140,	2,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0227',	'Servizos en rede',												157,	2,	'Sistemas microinformaticos e redes');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0224',	'Sistemas operativos en rede',									157,	2,	'Sistemas microinformaticos e redes');
+####################################################################################################################################################################################
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0380'	'Formación e orientación laboral',									107,	1	,'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0371',	'Fundamentos de hardware',											107,	1,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0369',	'Implantación de sistemas operativos',								213,	1,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',			133,	1,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0370',	'Planificación e administración de redess',							213,	1,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0372',	'Xestión de bases de datos',										187,	1,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0374',	'Administración de sistemas operativos',							140,	2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0377',	'Administración de sistemas xestores de bases de datos',			70,		2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0381',	'Empresa e iniciativa emprendedora',								53,		2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0382',	'Formación en centros de traballo',									384,	2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0376',	'Implantación de aplicacións web',									122,	2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0379',	'Proxecto de administración de sistemas informáticos en rede',		26,		2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0378',	'Seguridade e alta dispoñibilidade',								105,	2,	'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0375',	'Servizos de rede e internet',										157,	2,	'Administracion de sistemas informaticos en rede');
+####################################################################################################################################################################################
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0484',	'Bases de datos',														187,	1	,'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0487',	'Contornos de desenvolvemento',											107,	1,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0493',	'Formación e orientación laboral',										107,	1,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',				133,	1,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0485',	'Programación',															240,	1,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0483',	'Sistemas informáticos',												186,	1,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0486',	'Acceso a datos',														157,	2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0488',	'Desenvolvemento de interfaces',										140,	2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0494',	'Empresa e iniciativa emprendedora',									53,		2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0495',	'Formación en centros de traballo',										384,	2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0490',	'Programación de servizos e procesos',									70,		2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0489',	'Programación multimedia e dispositivos móbile',						123,	2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0492',	'Proxecto de desenvolvemento de aplicacións multiplataforma',			26,		2,	'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0491',	'Sistemas de xestión empresarial',										87,		2,	'Desenvolvemento de aplicacións multiplataforma');
+####################################################################################################################################################################################
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0484',	'Bases de datos',														187,	1	,'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0487',	'Contornos de desenvolvemento',											107,	1,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0617',	'Formación e orientación laboral',										107,	1,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',				133,	1,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0485',	'Programación',															240,	1,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0483',	'Sistemas informáticos',												186,	1,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0615',	'Deseño de interfaces web',												157,	2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0612',	'Desenvolvemento web en contorno cliente',								140,	2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0613',	'Desenvolvemento web en contorno servidor',								53,		2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0614',	'Despregamento de aplicacións web',										384,	2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0618',	'Empresa e iniciativa emprendedora',									70,		2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0619',	'Formación en centros de traballoe',									123,	2,	'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0616',	'Proxecto de desenvolvemento de aplicacións web',						26,		2,	'Desenvolvemento de aplicacións web');
 
 select * from Modulo;
 #*******************************************************************************************
@@ -78,6 +132,12 @@ select * from Modulo;
 #	CREAMOS LOS GRUPOS DE USUARIOS:	Direccion, Alumnado, Profesorado
 #		En Alumnado -> AlumnadoDAM, AlumnadoDAW, AlumnadoASIR, AlumnadoSMR, AlumnadoIO, AlumnadoIC
 #		En Profesorado -> ProfesoradoDAM, ProfesoradoDAW, ProfesoradoASIR, ProfesoradoSMR, ProfesoradoIO, ProfesoradoIC
+
+
+CREATE USER 'Direccion' IDENTIFIED BY '1234';
+CREATE USER 'Alumnado' IDENTIFIED BY '1234';
+create user 'Profesorado' identified by '1234';
+ 
 #-------------------------------------------------------------------------------------------
 #	DROP ROLE IF EXISTS <Rol1>, <Rol2>, ..., <RolN>;
 #	CREATE ROLE 	    <Rol1>, <Rol2>, ..., <RolN>;

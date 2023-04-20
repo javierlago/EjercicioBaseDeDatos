@@ -1,0 +1,164 @@
+[
+	{
+		"idModulo" : 50,
+		"sigla" : "IC",
+		"codigo" : "MP3009",
+		"nombre" : "Ciencias aplicadas I",
+		"horas" : 175,
+		"curso" : 1,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 51,
+		"sigla" : "IC",
+		"codigo" : "MP3011",
+		"nombre" : "Comunicacion e sociedade",
+		"horas" : 206,
+		"curso" : 1,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 52,
+		"sigla" : "IC",
+		"codigo" : "MP3015",
+		"nombre" : "Equipamientos eléctricos e electrónicos",
+		"horas" : 233,
+		"curso" : 1,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 53,
+		"sigla" : "IC",
+		"codigo" : "MP3029",
+		"nombre" : "Montaxe e mantemento de sistemas e compoñentes informáticos",
+		"horas" : 296,
+		"curso" : 1,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 54,
+		"sigla" : "IC",
+		"codigo" : "MP3019",
+		"nombre" : "Ciencias aplicadas II",
+		"horas" : 162,
+		"curso" : 2,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 55,
+		"sigla" : "IC",
+		"codigo" : "MP3012",
+		"nombre" : "Comunicación e sociedade II",
+		"horas" : 135,
+		"curso" : 2,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 56,
+		"sigla" : "IC",
+		"codigo" : "MP3032",
+		"nombre" : "Formación en centros de traballo",
+		"horas" : 320,
+		"curso" : 2,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 57,
+		"sigla" : "IC",
+		"codigo" : "MP3016",
+		"nombre" : "Instalación e mantemento de redes para transmisión de datos",
+		"horas" : 206,
+		"curso" : 2,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 58,
+		"sigla" : "IC",
+		"codigo" : "MP3030",
+		"nombre" : "Operacións auxiliares para a configuración e a explotación",
+		"horas" : 205,
+		"curso" : 2,
+		"ciclo" : "Informatica e comunicacións"
+	},
+	{
+		"idModulo" : 59,
+		"sigla" : "IO",
+		"codigo" : "MP3009",
+		"nombre" : "Ciencias aplicadas I",
+		"horas" : 175,
+		"curso" : 1,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 60,
+		"sigla" : "IO",
+		"codigo" : "MP3011",
+		"nombre" : "Comunicacion e sociedade",
+		"horas" : 206,
+		"curso" : 1,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 61,
+		"sigla" : "IO",
+		"codigo" : "MP3015",
+		"nombre" : "Equipamientos eléctricos e electrónicos",
+		"horas" : 233,
+		"curso" : 1,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 62,
+		"sigla" : "IO",
+		"codigo" : "MP3029",
+		"nombre" : "Montaxe e mantemento de sistemas e compoñentes informáticos",
+		"horas" : 296,
+		"curso" : 1,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 63,
+		"sigla" : "IO",
+		"codigo" : "MP3019",
+		"nombre" : "Ciencias aplicadas II",
+		"horas" : 162,
+		"curso" : 2,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 64,
+		"sigla" : "IO",
+		"codigo" : "MP3012",
+		"nombre" : "Comunicación e sociedade II",
+		"horas" : 135,
+		"curso" : 2,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 65,
+		"sigla" : "IO",
+		"codigo" : "MP3032",
+		"nombre" : "Formación en centros de traballo",
+		"horas" : 320,
+		"curso" : 2,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 66,
+		"sigla" : "IO",
+		"codigo" : "MP3016",
+		"nombre" : "Instalación e mantemento de redes para transmisión de datos",
+		"horas" : 206,
+		"curso" : 2,
+		"ciclo" : "Informatica de oficina"
+	},
+	{
+		"idModulo" : 67,
+		"sigla" : "IO",
+		"codigo" : "MP3030",
+		"nombre" : "Operacións auxiliares para a configuración e a explotación",
+		"horas" : 205,
+		"curso" : 2,
+		"ciclo" : "Informatica de oficina"
+	}
+]
