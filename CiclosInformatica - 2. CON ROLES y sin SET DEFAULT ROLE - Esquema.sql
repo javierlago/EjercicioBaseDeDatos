@@ -1,9 +1,9 @@
 #*******************************************************************************************
-#	CREACIÓN Y USO DE LA BASE DE DATOS 'CiclosInformatica'
+#	CREACIÓN Y USO DE LA BASE DE DATOS 'CInformatica e comunicaciónslosInformatInformatica e comunicaciónsa'
 #*******************************************************************************************
-drop database if exists CicloInformatica;
-create database Ciclosinformatica;
-use CiclosInformatica;
+drop database if exists CiclosdeInformatica;
+create database CiclosdeInformatica;
+use CiclosdeInformatica;
 
 #*******************************************************************************************
 #	CREACIÓN DE LAS TABLAS DE LA BASE DE DATOS
@@ -37,7 +37,7 @@ add constraint horas_positivo check (horas>0);
 #		nombre			text
 #		horas			int
 #		curso			int
-#		ciclo			text
+#		cInformatica e comunicaciónslo			text
 #
 #		Llave primaria 			->	idModulo
 #		Valor único    			->	codigo
@@ -50,9 +50,28 @@ add constraint horas_positivo check (horas>0);
 #*******************************************************************************************
 #	AÑADIMOS LOS DATOS
 #*******************************************************************************************
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("CA",'MP3009','Ciencias aplicadas I',175,1,'IC');
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("CE",'MP3010','Ciencias aplicadas I',206,1,'IC');
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("CE",'MP3010','Ciencias aplicadas I',206,1,'IC');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3009',	'Ciencias aplicadas I',											175,	1,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3011',	'Comunicacion e sociedade',										206,	1,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3015',	'Equipamientos eléctricos e electrónicos',						233,	1,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3029',	'Montaxe e mantemento de sistemas e compoñentes informáticos',	296,	1,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3019',	'Ciencias aplicadas II',										162,	2,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3012',	'Comunicación e sociedade II',									135,	2,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3032',	'Formación en centros de traballo',								320,	2,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3016',	'Instalación e mantemento de redes para transmisión de datos',	206,	2,	'Informatica e comunicacións');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IC",	'MP3030',	'Operacións auxiliares para a configuración e a explotación',	205,	2,	'Informatica e comunicacións');
+######################################################################################################################################################################################################
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3009',	'Ciencias aplicadas I',											175,	1,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3011',	'Comunicacion e sociedade',										206,	1,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3015',	'Equipamientos eléctricos e electrónicos',						233,	1,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3029',	'Montaxe e mantemento de sistemas e compoñentes informáticos',	296,	1,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3019',	'Ciencias aplicadas II',										162,	2,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3012',	'Comunicación e sociedade II',									135,	2,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3032',	'Formación en centros de traballo',								320,	2,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3016',	'Instalación e mantemento de redes para transmisión de datos',	206,	2,	'Informatica de oficina');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("IO",	'MP3030',	'Operacións auxiliares para a configuración e a explotación',	205,	2,	'Informatica de oficina');
+
+
+
 select * from Modulo;
 #*******************************************************************************************
 
