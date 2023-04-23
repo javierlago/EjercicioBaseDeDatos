@@ -206,101 +206,103 @@ create user JefedeEstudiosNocturno 				identified by 'jen'				default role Direc
 ######################## CREACION DE LOS USUARIOS DE EL GRUPO PROFESORADO ##############################################################
 # Profesosores de Informartica Comunicacion
 drop user if exists Prof_01IC , Prof_02IC, Prof_03IC ,Prof_04IC ,Prof_05IC;
-create user Prof_01IC,
-			Prof_02IC,
-            Prof_03IC,
-            Prof_04IC,
-            Prof_05IC identified by 'prof' default role ProfesorIC;
+create user Prof_01IC identified by 'prof' default role ProfesorIC;
+create user	Prof_02IC identified by 'prof' default role ProfesorIC;
+create user Prof_03IC identified by 'prof' default role ProfesorIC;
+create user Prof_04IC identified by 'prof' default role ProfesorIC;
+create user Prof_05IC identified by 'prof' default role ProfesorIC;
 ###########################################################################
 #Pofesores de Informatica de Oficina            
 drop user if exists Prof_01IO , Prof_02IO, Prof_03IO ,Prof_04IO ,Prof_05IO;
 
-create user Prof_01IO,
-			Prof_02IO,
-            Prof_03IO,
-            Prof_04IO,
-            Prof_05IO identified by 'prof' default role ProfesorIO;
+create user Prof_01IO identified by 'prof' default role ProfesorIO;
+create user	Prof_02IO identified by 'prof' default role ProfesorIO;
+create user Prof_03IO identified by 'prof' default role ProfesorIO;
+create user Prof_04IO identified by 'prof' default role ProfesorIO;
+create user Prof_05IO identified by 'prof' default role ProfesorIO;
  ###########################################################################           
  #Profesores de Sistemas Microinformaticos redes           
 drop user if exists Prof_01SMR , Prof_02SMR, Prof_03SMR ,Prof_04SMR ,Prof_05SMR;
-create user Prof_01SMR,
-			Prof_02SMR,
-            Prof_03SMR,
-            Prof_04SMR,
-            Prof_05SMR identified by 'prof' default role ProfesorSMR;            
+create user Prof_01SMR identified by 'prof' default role ProfesorSMR;
+create user	Prof_02SMR identified by 'prof' default role ProfesorSMR;
+create user Prof_03SMR identified by 'prof' default role ProfesorSMR;
+create user Prof_04SMR identified by 'prof' default role ProfesorSMR;
+create user Prof_05SMR identified by 'prof' default role ProfesorSMR;         
  ###########################################################################   
  # Profesores de Administracion de Sistemas Informaticos Redes
 drop user if exists Prof_01ASIR , Prof_02ASIR, Prof_03ASIR ,Prof_04ASIR ,Prof_05ASIR;
-create user Prof_01ASIR,
-			Prof_02ASIR,
-            Prof_03ASIR,
-            Prof_04ASIR,
-            Prof_05ASIR identified by 'prof' default role ProfesorASIR;            
+create user Prof_01ASIR identified by 'prof' default role ProfesorASIR;
+create user	Prof_02ASIR identified by 'prof' default role ProfesorASIR;
+create user Prof_03ASIR identified by 'prof' default role ProfesorASIR;
+create user Prof_04ASIR identified by 'prof' default role ProfesorASIR;
+create user Prof_05ASIR identified by 'prof' default role ProfesorASIR;         
 ###########################################################################
 # Profesores de Desarrollo de Aplicaciones Multiplataforma
 drop user if exists Prof_01DAM , Prof_02DAM, Prof_03DAM ,Prof_04DAM ,Prof_05DAM;
-create user Prof_01DAM,
-			Prof_02DAM,
-            Prof_03DAM,
-            Prof_04DAM,
-            Prof_05DAM identified by 'prof' default role ProfesorDAM;
+create user Prof_01DAM identified by 'prof' default role ProfesorDAM;
+create user	Prof_02DAM identified by 'prof' default role ProfesorDAM;
+create user Prof_03DAM identified by 'prof' default role ProfesorDAM;
+create user Prof_04DAM identified by 'prof' default role ProfesorDAM;
+create user Prof_05DAM identified by 'prof' default role ProfesorDAM;
 ###########################################################################
 # Profesores de Desarrollo de Aplicaciones Web
 drop user if exists Prof_01DAW , Prof_02DAW, Prof_03DAW ,Prof_04DAW ,Prof_05DAW;
-create user Prof_01DAW,
-			Prof_02DAW,
-            Prof_03DAW,
-            Prof_04DAW,
-            Prof_05DAW identified by 'prof' default role ProfesorDAW;		
+create user Prof_01DAW identified by 'prof' default role ProfesorDAW;
+create user	Prof_02DAW identified by 'prof' default role ProfesorDAW;
+create user Prof_03DAW identified by 'prof' default role ProfesorDAW;
+create user Prof_04DAW identified by 'prof' default role ProfesorDAW;
+create user Prof_05DAW identified by 'prof' default role ProfesorDAW;
+          
 ###########################################################################
 ######################## CREACION DE LOS USUARIOS DE EL GRUPO ALUMNADO ##############################################
 #Alumnos de Informatica de Oficina
 drop user if exists Al_01IO , Al_02IO, Al_03IO ,Al_04IO ,Al_05IO;
-create user Al_01IO,
-			Al_02IO,
-            Al_03IO,
-            Al_04IO,
-            Al_05IO identified by 'abc' default role AlumnoIO;
+create user Al_01IO identified by 'abc' default role AlumnoIO;
+create user	Al_02IO identified by 'abc' default role AlumnoIO;
+create user Al_03IO identified by 'abc' default role AlumnoIO;
+create user Al_04IO identified by 'abc' default role AlumnoIO;
+create user Al_05IO identified by 'abc' default role AlumnoIO;
 ###########################################################################
 #Alumnos de Informatica Comuinicacion
 drop user if exists Al_01IC , Al_02IC, Al_03IC ,Al_04IC ,Al_05IC;
-create user Al_01IC,
-			Al_02IC,
-            Al_03IC,
-            Al_04IC,
-            Al_05IC identified by 'abc' default role AlumnoIC;	
+create user Al_01IC identified by 'abc' default role AlumnoIC;
+create user	Al_02IC identified by 'abc' default role AlumnoIC;
+create user Al_03IC identified by 'abc' default role AlumnoIC;
+create user Al_04IC identified by 'abc' default role AlumnoIC;
+create user Al_05IC identified by 'abc' default role AlumnoIC;
 ###########################################################################
 #Alumnos Sistema Microinformatico Redes            	
  drop user if exists Al_01SMR , Al_02SMR, Al_03SMR ,Al_04SMR ,Al_05SMR;
-create user Al_01SMR,
-			Al_02SMR,
-            Al_03SMR,
-            Al_04SMR,
-            Al_05SMR identified by 'abc' default role AlumnoSMR;
+create user Al_01SMR identified by 'abc' default role AlumnoSMR;
+create user	Al_02SMR identified by 'abc' default role AlumnoSMR;
+create user Al_03SMR identified by 'abc' default role AlumnoSMR;
+create user Al_04SMR identified by 'abc' default role AlumnoSMR;
+create user Al_05SMR identified by 'abc' default role AlumnoSMR;
 ###########################################################################
 # Alumnod de Administracion de Sistemas Informaticos Redes
 drop user if exists Al_01ASIR , Al_02ASIR, Al_03ASIR ,Al_04ASIR ,Al_05ASIR;
-create user Al_01ASIR,
-			Al_02ASIR,
-            Al_03ASIR,
-            Al_04ASIR,
-            Al_05ASIR identified by 'abc' default role AlumnoASIR;
+create user Al_01ASIR identified by 'abc' default role AlumnoASIR;
+create user	Al_02ASIR identified by 'abc' default role AlumnoASIR;
+create user Al_03ASIR identified by 'abc' default role AlumnoASIR;
+create user Al_04ASIR identified by 'abc' default role AlumnoASIR;
+create user Al_05ASIR identified by 'abc' default role AlumnoASIR;
 ###########################################################################
 # Alumnos de Desarrollo de Aplicaciones Web
 drop user if exists Al_01DAW , Al_02DAW, Al_03DAW ,Al_04DAW ,Al_05DAW;
-create user Al_01DAW,
-			Al_02DAW,
-            Al_03DAW,
-            Al_04DAW,
-            Al_05DAW identified by 'abc' default role AlumnoDAW;
+create user Al_01DAW identified by 'abc' default role AlumnoDAW;
+create user	Al_02DAW identified by 'abc' default role AlumnoDAW;
+create user Al_03DAW identified by 'abc' default role AlumnoDAW;
+create user Al_04DAW identified by 'abc' default role AlumnoDAW;
+create user Al_05DAW identified by 'abc' default role AlumnoDAW;
 ###########################################################################
 # Alumnos de Desarrollo de Aplicaciones Multiplataforma
 drop user if exists Al_01DAM , Al_02DAM, Al_03DAM ,Al_04DAM ,Al_05DAM;
-create user Al_01DAM,
-			Al_02DAM,
-            Al_03DAM,
-            Al_04DAM,
-            Al_05DAM identified by 'abc' default role AlumnoDAM;
+create user Al_01DAM identified by 'abc' default role AlumnoDAM;
+create user	Al_02DAM identified by 'abc' default role AlumnoDAM;
+create user Al_03DAM identified by 'abc' default role AlumnoDAM;
+create user Al_04DAM identified by 'abc' default role AlumnoDAM;
+create user Al_05DAM identified by 'abc' default role AlumnoDAM;
 
+show grants for current_user;
 
 
