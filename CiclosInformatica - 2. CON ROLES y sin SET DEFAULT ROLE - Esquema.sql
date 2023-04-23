@@ -82,7 +82,7 @@ insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0226'
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0227',	'Servizos en rede',												157,	2,	'Sistemas microinformaticos e redes');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("SMR",	'MP0224',	'Sistemas operativos en rede',									157,	2,	'Sistemas microinformaticos e redes');
 ####################################################################################################################################################################################
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0380'	'Formación e orientación laboral',									107,	1	,'Administracion de sistemas informaticos en rede');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0380',	'Formación e orientación laboral',									107,	1	,'Administracion de sistemas informaticos en rede');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0371',	'Fundamentos de hardware',											107,	1,	'Administracion de sistemas informaticos en rede');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0369',	'Implantación de sistemas operativos',								213,	1,	'Administracion de sistemas informaticos en rede');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',			133,	1,	'Administracion de sistemas informaticos en rede');
@@ -97,7 +97,7 @@ insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0379
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0378',	'Seguridade e alta dispoñibilidade',								105,	2,	'Administracion de sistemas informaticos en rede');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("ASIR",	'MP0375',	'Servizos de rede e internet',										157,	2,	'Administracion de sistemas informaticos en rede');
 ####################################################################################################################################################################################
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0484',	'Bases de datos',														187,	1	,'Desenvolvemento de aplicacións multiplataforma');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0484',	'Bases de datos',														187,	1,	'Desenvolvemento de aplicacións multiplataforma');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0487',	'Contornos de desenvolvemento',											107,	1,	'Desenvolvemento de aplicacións multiplataforma');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0493',	'Formación e orientación laboral',										107,	1,	'Desenvolvemento de aplicacións multiplataforma');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',				133,	1,	'Desenvolvemento de aplicacións multiplataforma');
@@ -112,7 +112,7 @@ insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0489'
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0492',	'Proxecto de desenvolvemento de aplicacións multiplataforma',			26,		2,	'Desenvolvemento de aplicacións multiplataforma');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAM",	'MP0491',	'Sistemas de xestión empresarial',										87,		2,	'Desenvolvemento de aplicacións multiplataforma');
 ####################################################################################################################################################################################
-insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0484',	'Bases de datos',														187,	1	,'Desenvolvemento de aplicacións web');
+insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0484',	'Bases de datos',														187,	1,	'Desenvolvemento de aplicacións web');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0487',	'Contornos de desenvolvemento',											107,	1,	'Desenvolvemento de aplicacións web');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0617',	'Formación e orientación laboral',										107,	1,	'Desenvolvemento de aplicacións web');
 insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0373',	'Linguaxes de marcas e sistemas de xestión de información',				133,	1,	'Desenvolvemento de aplicacións web');
@@ -129,73 +129,178 @@ insert into Modulo (sigla,codigo,nombre,horas,curso,ciclo)values("DAW",	'MP0616'
 select * from Modulo;
 #*******************************************************************************************
 
+create view Ciclo_Informatica_Comunicacion 							as select * 		from modulo 			where sigla='IC';
+create view Ciclo_Informatica_Oficina				 				as select *			from modulo 			where sigla='IO';
+create view Ciclo_Sistemas_Microinformaticos_Redes 					as select * 		from modulo 			where sigla='SMR';
+create view Ciclo_Administracion_Sitemas_Informaticos_Redes 		as select * 		from modulo 			where sigla='ASIR';
+create view Ciclo_Desarrollo_Aplicaciones_Multiplataforma 			as select * 		from modulo 			where sigla='DAM';
+create view Ciclo_Desarrolo_Aplicaciones_Web 						as select * 		from modulo 			where sigla='DAW';
+
+
 #	CREAMOS LOS GRUPOS DE USUARIOS:	Direccion, Alumnado, Profesorado
 #		En Alumnado -> AlumnadoDAM, AlumnadoDAW, AlumnadoASIR, AlumnadoSMR, AlumnadoIO, AlumnadoIC
 #		En Profesorado -> ProfesoradoDAM, ProfesoradoDAW, ProfesoradoASIR, ProfesoradoSMR, ProfesoradoIO, ProfesoradoIC
 
+drop role if exists direccion; 
+CREATE ROLE direccion;
+grant all on Ciclo_Informatica_Comunicacion 										to Direccion;
+grant all on Ciclo_Informatica_Oficina		 										to Direccion;
+grant all on Ciclo_Sistemas_Microinformaticos_Redes 	 							to Direccion;	
+grant all on Ciclo_Administracion_Sitemas_Informaticos_Redes 	 					to Direccion;	
+grant all on Ciclo_Desarrollo_Aplicaciones_Multiplataforma 	 						to Direccion;	
+grant all on Ciclo_Desarrolo_Aplicaciones_Web 	 									to Direccion;	
 
-CREATE USER 'Direccion' IDENTIFIED BY '1234';
-CREATE USER 'Alumnado' IDENTIFIED BY '1234';
-create user 'Profesorado' identified by '1234';
- 
-#-------------------------------------------------------------------------------------------
-#	DROP ROLE IF EXISTS <Rol1>, <Rol2>, ..., <RolN>;
-#	CREATE ROLE 	    <Rol1>, <Rol2>, ..., <RolN>;
-#*******************************************************************************************
 
-#*******************************************************************************************
-#	ASIGNAMOS LOS MISMOS PRIVILEGIOS A LOS COMPONENTES DE LOS GRUPOS ALUMNADO Y PROFESORADO
-#-------------------------------------------------------------------------------------------
-#	GRANT <RolGrupo> TO <RolComponente1>, <RolComponente2>, ..., <RolComponenteN>;
-#*******************************************************************************************
+drop role if exists ProfesorIC; 
+Create role ProfesorIC;
+grant all on Ciclo_Informatica_Comunicacion to ProfesorIC;
+drop role if exists ProfesorIO; 
+create role ProfesorIO;
+grant all on Ciclo_Informatica_Oficina to ProfesorIO;
+drop role if exists ProfesorSMR; 
+create role ProfesorSMR;
+grant all on Ciclo_Sistemas_Microinformaticos_Redes  to ProfesorSMR;
+drop role if exists ProfesorASIR; 
+create role ProfesorASIR;
+grant all on Ciclo_Administracion_Sitemas_Informaticos_Redes to ProfesorASIR;
+drop role if exists  ProfesorDAM; 
+create role ProfesorDAM;
+grant all on Ciclo_Desarrollo_Aplicaciones_Multiplataforma 	to ProfesorDAM;
+drop role if exists ProfesorDAW; 
+create role ProfesorDAW;
+grant all on Ciclo_Desarrolo_Aplicaciones_Web  to ProfesorDAW;
 
-#*******************************************************************************************
-#	CREAMOS LAS VISTAS ASOCIADAS A CADA CICLO FORMATIVO
-#-------------------------------------------------------------------------------------------
-#	DROP VIEW IF EXISTS ..., ..., ...;
-#	CREATE VIEW ... AS SELECT ...;
-#*******************************************************************************************
+drop role if exists AlumnoIC; 
+Create role AlumnoIC;
+grant select on Ciclo_Informatica_Comunicacion to AlumnoIC;
+drop role if exists AlumnoIO; 
+create role AlumnoIO;
+grant select on Ciclo_Informatica_Oficina to AlumnoIO;
+drop role if exists AlumnoSMR; 
+create role AlumnoSMR;
+grant select on Ciclo_Sistemas_Microinformaticos_Redes  to AlumnoSMR;
+drop role if exists AlumnoASIR; 
+create role AlumnoASIR;
+grant select on Ciclo_Administracion_Sitemas_Informaticos_Redes to AlumnoASIR;
+drop role if exists  AlumnoDAM; 
+create role AlumnoDAM;
+grant select on Ciclo_Desarrollo_Aplicaciones_Multiplataforma 	to AlumnoDAM;
+drop role if exists AlumnoDAW; 
+create role AlumnoDAW;
+grant select on Ciclo_Desarrolo_Aplicaciones_Web  to AlumnoDAW;
 
-#*******************************************************************************************
-#	ASIGNAMOS LOS PERMISOS A DIRECCIÓN Y A LOS GRUPOS DEL PROFESORADO
-#-------------------------------------------------------------------------------------------
-#	GRANT <permiso> ON <tabla> TO <Rol1>, <Rol2>, ..., <Rol3>;
-#*******************************************************************************************
 
-#*******************************************************************************************
-#	CREAMOS LOS USUARIOS DE DIRECCIÓN CON DEFAULT ROLE
-#-------------------------------------------------------------------------------------------
-#	DROP USER IF EXISTS <direccion1>, <direccion2>, ..., <direccionN>;
-#	CREATE USER <direccion1> IDENTIFIED BY 'dir' DEFAULT ROLE 'Rol1';
-#	...........................
-#	CREATE USER <direccionN> IDENTIFIED BY 'dir' DEFAULT ROLE 'Rol1';
-#*******************************************************************************************
+######################## CREACION DE LOS USUARIOS DE EL GRUPO DIRECCION ################################################################
+drop user if exists Director;																					                       
+create user Director 							identified by 'Dir' 			default role Direccion;                                
+drop user if exists Vicedirector;
+create user Vicedirector  						identified by 'Vic'				default role Direccion;
+drop user if exists Secretario;
+create user  Secretario 						identified by 'Sec'				default role Direccion;
+drop user if exists JefedeEstudiosDiurno;
+create user JefedeEstudiosDiurno 				identified by 'jed'				default role Direccion;
+drop user if exists JefedeEstudiosNocturno;
+create user JefedeEstudiosNocturno 				identified by 'jen'				default role Direccion;
+########################################################################################################################################
 
-#*******************************************************************************************
-#	CREAMOS LOS USUARIOS DEL PROFESORADO CON DEFAULT ROLE
-#-------------------------------------------------------------------------------------------
-#	DROP USER IF EXISTS <profesor1>, <profesor2>, ..., <profesorN>;
-#	CREATE USER <profesor1> IDENTIFIED BY 'pro' DEFAULT ROLE 'Rol2';
-#	...........................
-#	CREATE USER <profesorN> IDENTIFIED BY 'pro' DEFAULT ROLE 'Rol2';
-#*******************************************************************************************
+######################## CREACION DE LOS USUARIOS DE EL GRUPO PROFESORADO ##############################################################
+# Profesosores de Informartica Comunicacion
+drop user if exists Prof_01IC , Prof_02IC, Prof_03IC ,Prof_04IC ,Prof_05IC;
+create user Prof_01IC,
+			Prof_02IC,
+            Prof_03IC,
+            Prof_04IC,
+            Prof_05IC identified by 'prof' default role ProfesorIC;
+###########################################################################
+#Pofesores de Informatica de Oficina            
+drop user if exists Prof_01IO , Prof_02IO, Prof_03IO ,Prof_04IO ,Prof_05IO;
 
-#*******************************************************************************************
-#	DAMOS LOS RESPECTIVOS PRIVILEGIOS A LOS GRUPOS DEL ALUMNADO
-#-------------------------------------------------------------------------------------------
-#	GRANT <permiso> ON <tabla> TO <Rol1>;
-#	---------------------
-#	GRANT <permiso> ON <tabla> TO <RolN>;
-#*******************************************************************************************
+create user Prof_01IO,
+			Prof_02IO,
+            Prof_03IO,
+            Prof_04IO,
+            Prof_05IO identified by 'prof' default role ProfesorIO;
+ ###########################################################################           
+ #Profesores de Sistemas Microinformaticos redes           
+drop user if exists Prof_01SMR , Prof_02SMR, Prof_03SMR ,Prof_04SMR ,Prof_05SMR;
+create user Prof_01SMR,
+			Prof_02SMR,
+            Prof_03SMR,
+            Prof_04SMR,
+            Prof_05SMR identified by 'prof' default role ProfesorSMR;            
+ ###########################################################################   
+ # Profesores de Administracion de Sistemas Informaticos Redes
+drop user if exists Prof_01ASIR , Prof_02ASIR, Prof_03ASIR ,Prof_04ASIR ,Prof_05ASIR;
+create user Prof_01ASIR,
+			Prof_02ASIR,
+            Prof_03ASIR,
+            Prof_04ASIR,
+            Prof_05ASIR identified by 'prof' default role ProfesorASIR;            
+###########################################################################
+# Profesores de Desarrollo de Aplicaciones Multiplataforma
+drop user if exists Prof_01DAM , Prof_02DAM, Prof_03DAM ,Prof_04DAM ,Prof_05DAM;
+create user Prof_01DAM,
+			Prof_02DAM,
+            Prof_03DAM,
+            Prof_04DAM,
+            Prof_05DAM identified by 'prof' default role ProfesorDAM;
+###########################################################################
+# Profesores de Desarrollo de Aplicaciones Web
+drop user if exists Prof_01DAW , Prof_02DAW, Prof_03DAW ,Prof_04DAW ,Prof_05DAW;
+create user Prof_01DAW,
+			Prof_02DAW,
+            Prof_03DAW,
+            Prof_04DAW,
+            Prof_05DAW identified by 'prof' default role ProfesorDAW;		
+###########################################################################
+######################## CREACION DE LOS USUARIOS DE EL GRUPO ALUMNADO ##############################################
+#Alumnos de Informatica de Oficina
+drop user if exists Al_01IO , Al_02IO, Al_03IO ,Al_04IO ,Al_05IO;
+create user Al_01IO,
+			Al_02IO,
+            Al_03IO,
+            Al_04IO,
+            Al_05IO identified by 'abc' default role AlumnoIO;
+###########################################################################
+#Alumnos de Informatica Comuinicacion
+drop user if exists Al_01IC , Al_02IC, Al_03IC ,Al_04IC ,Al_05IC;
+create user Al_01IC,
+			Al_02IC,
+            Al_03IC,
+            Al_04IC,
+            Al_05IC identified by 'abc' default role AlumnoIC;	
+###########################################################################
+#Alumnos Sistema Microinformatico Redes            	
+ drop user if exists Al_01SMR , Al_02SMR, Al_03SMR ,Al_04SMR ,Al_05SMR;
+create user Al_01SMR,
+			Al_02SMR,
+            Al_03SMR,
+            Al_04SMR,
+            Al_05SMR identified by 'abc' default role AlumnoSMR;
+###########################################################################
+# Alumnod de Administracion de Sistemas Informaticos Redes
+drop user if exists Al_01ASIR , Al_02ASIR, Al_03ASIR ,Al_04ASIR ,Al_05ASIR;
+create user Al_01ASIR,
+			Al_02ASIR,
+            Al_03ASIR,
+            Al_04ASIR,
+            Al_05ASIR identified by 'abc' default role AlumnoASIR;
+###########################################################################
+# Alumnos de Desarrollo de Aplicaciones Web
+drop user if exists Al_01DAW , Al_02DAW, Al_03DAW ,Al_04DAW ,Al_05DAW;
+create user Al_01DAW,
+			Al_02DAW,
+            Al_03DAW,
+            Al_04DAW,
+            Al_05DAW identified by 'abc' default role AlumnoDAW;
+###########################################################################
+# Alumnos de Desarrollo de Aplicaciones Multiplataforma
+drop user if exists Al_01DAM , Al_02DAM, Al_03DAM ,Al_04DAM ,Al_05DAM;
+create user Al_01DAM,
+			Al_02DAM,
+            Al_03DAM,
+            Al_04DAM,
+            Al_05DAM identified by 'abc' default role AlumnoDAM;
 
-#*******************************************************************************************
-#	CREAMOS LOS USUARIOS, ASIGNÁNDOLES LOS ROLES CORRESPONDIENTES
-#-------------------------------------------------------------------------------------------
-#	DROP USER IF EXISTS <usuario1>, <usuario2>, ..., <usuarioN>;
-#	CREATE USER <usuario1> IDENTIFIED BY 'use' DEFAULT ROLE 'Rol3';
-#	...........................
-#	CREATE USER <usuarioN> IDENTIFIED BY 'use' DEFAULT ROLE 'Rol3';
-#*******************************************************************************************
 
-#*******************************************************************************************
-#*******************************************************************************************
+
