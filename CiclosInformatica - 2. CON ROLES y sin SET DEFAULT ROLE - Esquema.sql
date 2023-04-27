@@ -303,6 +303,6 @@ create user Al_03DAM identified by 'abc' default role AlumnoDAM;
 create user Al_04DAM identified by 'abc' default role AlumnoDAM;
 create user Al_05DAM identified by 'abc' default role AlumnoDAM;
 
-show grants for current_user;
 
+show grants for current_user;
 
