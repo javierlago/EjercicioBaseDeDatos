@@ -30,8 +30,8 @@
         ( "Guillermina", 1000 );
 
     #UNLOCK TABLES;
-    #COMMIT;	-- Confirma los datos introducidos
-    ROLLBACK;	-- Devuelve a la base de datos al estado previo al inicio de la transacción
+    COMMIT;	-- Confirma los datos introducidos
+    #ROLLBACK;	-- Devuelve a la base de datos al estado previo al inicio de la transacción
 #*******************************************************************************************
 #	CREAMOS LAS TRES USUARIAS Y LES DAMOS TODOS LOS PERMISOS EN LA BASE DE DATOS CREADA
 #*******************************************************************************************
