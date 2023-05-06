@@ -106,26 +106,11 @@
 #*******************************************************************************************
 #	DATOS DE LAS ComarcasGalicia
 #*******************************************************************************************
-INSERT INTO	ComarcasGalicia
-		VALUES 	( 100, 'Arzúa', 10 ),
-				( 101, 'Barbanza', 10 ),
-				( 102, 'A Barcala', 10 ),
-                ( 103, 'Bergantiños', 10 ),
-                ( 104, 'Betanzos', 10 ),
-                ( 105, 'A Coruña', 10 ),
-                ( 106, '', 10 ),
-                ( 107, 'Ferrol', 10 ),
-                ( 108, 'Fisterra', 10 ),
-                ( 109, 'Muros', 10 ),
-                ( 110, 'Noia', 10 ),
-                ( 111, 'Ordes', 10 ),
-                ( 112, 'Ortegal', 10 ),
-                ( 113, 'Santiago', 10 ),
-                ( 114, 'O Sar', 10 ),
-                ( 115, 'Terra de Melide', 10 );
+
+
 		
 select * from comarcasgalicia;
-/*START TRANSACTION;
+START TRANSACTION;
 SAVEPOINT	INICIO;
   INSERT INTO	ComarcasGalicia
 		VALUES 	( 100, 'Arzúa', 10 ),
@@ -144,6 +129,8 @@ SAVEPOINT	INICIO;
                 ( 113, 'Santiago', 10 ),
                 ( 114, 'O Sar', 10 ),
                 ( 115, 'Terra de Melide', 10 );
+
+              
 	savepoint p1;
       INSERT INTO	ComarcasGalicia
 		values( 116, '', 11 ),
@@ -268,4 +255,4 @@ savepoint P3;
                 ( 151, 'Tabeirós-Terra de Montes', 13 ),
                 ( 152, 'Vigo', 13 );
   commit;
-  select * from ComarcasGalicia; */
+  select * from ComarcasGalicia; 
