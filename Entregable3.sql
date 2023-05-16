@@ -28,7 +28,9 @@ CREATE TABLE Datos (
 #------------------------------------------------------------------------
 #	CREAMOS DOS TABLAS (Datos_Modificados Y Datos_Borrados) CON LA MISMA ESTRUCTURA QUE LA TABLA Datos
 #------------------------------------------------------------------------
-CREATE TABLE Datos_Modificaciones LIKE Datos;
+drop table if exists Datos_Modificados;
+CREATE TABLE Datos_Modificados LIKE Datos;
+drop table if exists Datos_Borrados;
 CREATE TABLE Datos_Borrados LIKE Datos;
  #------------------------------------------------------------------------
 #	AGREGAMOS TODOS LOS DATOS
@@ -359,7 +361,7 @@ BEGIN
 END //
 DELIMITER ;
 
-#call actualizar_superficie_concello("Arzúa",0);
+##call actualizar_superficie_concello("Arzúa",0);
 #select * from Datos where concello="Arzúa";
 #------------------------------------------------------------------------
 #	PROCEDIMIENTO PARA BORRAR LOS CONCELLOS CUYA SUPERFICIE OSCILE ENTRE UNOS VALORE MÍNIMO Y MÁXIMO PASADOS COMO PARÁMETROS
@@ -379,35 +381,89 @@ END; //
 #	FUNCIÓN QUE DEVUELVA LA SUMA DE LAS DIFERENCIAS ENTRE MUJERES Y HOMBRES DE UNA DETERMINADA COMARCA PASADA COMO PARÁMETRO
 #------------------------------------------------------------------------
 ## select sum(hombres-mujeres) as Diferencia from Datos where Comarca="Vigo";
-drop function if exists diferencia_mujeres_hombres_por_comarca;
 
-CREATE FUNCTION diferencia_mujeres_hombres_por_comarca(in comarca_param VARCHAR(30))
+DELIMITER //
+drop function if exists diferencia_mujeres_hombres_por_comarca//
+CREATE FUNCTION diferencia_mujeres_hombres_por_comarca(comarca_param VARCHAR(30))
 RETURNS INT
+DETERMINISTIC
 BEGIN
 	DECLARE diferencia_total INT;
-	Set diferencia_total= (select sum(hombres-mujeres) from Datos where Comarca=comarca_param);
+	Set diferencia_total=(select sum(abs(hombres-mujeres))from Datos where Comarca=comarca_param);
 	RETURN diferencia_total;
-END;
+END
+//	DELIMITER ;
+select diferencia_mujeres_hombres_por_comarca("Vigo");
+#------------------------------------------------------------------------
+#	FUNCIÓN QUE DEVUELVA LA SUPERFICE MEDIA DE LOS CONCELLOS DE UNA DETERMINADA COMARCA PASADA COMO PARÁMETROs
+#------------------------------------------------------------------------
+DELIMITER //
+CREATE FUNCTION superficie_media_comarca(comarca_param VARCHAR(30))
+RETURNS FLOAT
+DETERMINISTIC
+BEGIN
+    DECLARE superficie_media FLOAT;
+    SET superficie_media = (
+        SELECT AVG(Superficie)
+        FROM Datos
+        WHERE Comarca = comarca_param
+    );
+    RETURN superficie_media;
+END
+//
+DELIMITER ;
+##select superficie_media_comarca("Vigo") as MedidaSegunComarca;
 
-## select diferencia_mujeres_hombres_por_comarca("Vigo");
-#------------------------------------------------------------------------
-#	FUNCIÓN QUE DEVUELVA LA SUPERFICE MEDIA DE LOS CONCELLOS DE UNA DETERMINADA COMARCA PASADA COMO PARÁMETRO
-#------------------------------------------------------------------------
-drop function if exists superficie 
 #------------------------------------------------------------------------
 #	TRIGGER PARA QUE CADA VEZ QUE MODIFIQUEMOS UN DATO GUARDE EL VALOR ANTERIOR EN LA TABLA Datos_Modificados
 #------------------------------------------------------------------------
+DELIMITER //
+drop trigger if exists guardar_valor_anterior;
+CREATE TRIGGER guardar_valor_anterior
+BEFORE UPDATE ON Datos
+FOR EACH ROW
+BEGIN
+    INSERT INTO Datos_Modificados (Provincia, Comarca, Concello, Superficie, Mujeres, Hombres)
+    VALUES (OLD.Provincia, OLD.Comarca, OLD.Concello, OLD.Superficie, OLD.Mujeres, OLD.Hombres);
+END
+//
+DELIMITER ;
 
+## call actualizar_superficie_concello("Arzúa",1000);
+## select * from Datos_Modificados;
 #------------------------------------------------------------------------
 #	TRIGGER PARA QUE CADA VEZ QUE BORREMOS UNA TUPLA LA GUARDE EN LA TABLA Datos_Borrados
 #------------------------------------------------------------------------
-
+DELIMITER //
+CREATE TRIGGER guardar_tupla_borrada
+AFTER DELETE ON Datos
+FOR EACH ROW
+BEGIN
+    INSERT INTO Datos_Borrados (Provincia, Comarca, Concello, Superficie, Mujeres, Hombres)
+    VALUES (OLD.Provincia, OLD.Comarca, OLD.Concello, OLD.Superficie, OLD.Mujeres, OLD.Hombres);
+END
+//
+DELIMITER ;
+delete  from Datos;
+select * from Datos_borrados;
 #------------------------------------------------------------------------
 #	PROCEDIMIENTO PARA RESTAURAR TODOS LOS DATOS ELIMINADOS
 #------------------------------------------------------------------------
-
+select * from Datos;
+DELIMITER //
+Drop procedure if exists restaurar_datos_eliminados//
+CREATE PROCEDURE restaurar_datos_eliminados()
+begin
+insert into Datos
+select * 
+from Datos_Borrados;
+END
+//
+DELIMITER ;
+call restaurar_datos_eliminados();
+select * from Datos;
 #------------------------------------------------------------------------
 #	PROCEDIMIENTO PARA LIMPIAR LA TABLA Datos_Borrados
 #------------------------------------------------------------------------
-
+ Delete from Datos_Borrados;
 #------------------------------------------------------------------------
